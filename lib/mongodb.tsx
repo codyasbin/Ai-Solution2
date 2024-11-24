@@ -8,7 +8,7 @@ declare global {
 const uri: string | undefined = process.env.MONGODB_URI;
 const options: MongoClientOptions = {};
 
-let client: MongoClient;
+let client: MongoClient; 
 let clientPromise: Promise<MongoClient>;
 
 if (!uri) {
@@ -16,15 +16,15 @@ if (!uri) {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  if (!global._mongoClientPromise) {
+  if (!globalThis._mongoClientPromise) {
     client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect().then((client) => {
+    globalThis._mongoClientPromise = client.connect().then((client) => {
       const db = client.db('ai-solution'); // Specify the database here
       console.log(`Connected to MongoDB: ${db.databaseName}`);
       return client;
     });
   }
-  clientPromise = global._mongoClientPromise;
+  clientPromise = globalThis._mongoClientPromise;
 } else {
   client = new MongoClient(uri, options);
   clientPromise = client.connect().then((client) => {

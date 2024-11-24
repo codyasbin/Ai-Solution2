@@ -4,10 +4,7 @@ import "./globals.css";
 import { usePathname } from "next/navigation"; // Hook to get the current pathname
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+
 } from "@clerk/nextjs";
 type RootLayoutProps = {
   children: React.ReactNode;
