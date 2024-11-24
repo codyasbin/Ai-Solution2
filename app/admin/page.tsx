@@ -27,7 +27,7 @@ interface Stats {
 }
 
 const AdminDashboard = () => {
-  const { isSignedIn, user, isLoaded } = useAuth(); // Use Clerk's useAuth hook
+  const { isSignedIn, isLoaded } = useAuth(); // Use Clerk's useAuth hook
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [stats, setStats] = useState<Stats | null>(null); // To hold statistics data
@@ -112,7 +112,7 @@ const AdminDashboard = () => {
   if (loading) return <div>Loading contacts...</div>;
 
   // Extract username from email (before the "@"), only if user is available
-  const username = user?.email ? user.email.split('@')[0] : 'Jharna Kunwar';
+  const username =  'Jharna Kunwar';
 
   return (
     
