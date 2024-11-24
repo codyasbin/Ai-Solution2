@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Main() {
   return (
@@ -77,7 +78,9 @@ export default function Main() {
         </motion.div>
 
         {/* Call to Action Button */}
-        <motion.button
+        <Link href='/services' >
+        
+              <motion.button
           className="mt-8 px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold text-lg rounded-full shadow-xl transition-all duration-200"
           whileHover={{
             scale: 1.1,
@@ -91,6 +94,7 @@ export default function Main() {
         >
           Explore Our Solutions
         </motion.button>
+        </Link>  
       </div>
     </section>
   );
