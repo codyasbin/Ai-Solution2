@@ -1,91 +1,56 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useAuth, RedirectToSignIn, SignOutButton } from '@clerk/nextjs'; // Import Clerk hooks
-import { motion } from 'framer-motion'; // For animations
-import { Pie } from 'react-chartjs-2'; // For Pie Chart
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'; // For Chart.js
-
-ChartJS.register(ArcElement, Tooltip, Legend); // Register chart components
-
-// Type definition for the Contact data
-interface Contact {
-  _id: string;
-  name: string;
-  email: string;
-  company: string;
-  phone: string;
-  country: string;
-  jobTitle: string;
-  jobDetails: string;
-}
-
-interface Stats {
-  totalContacts: number;
-  countryStats: any;
-  jobTitleStats: any;
-}
+import { useState, useEffect } from "react";
+import { useAuth, RedirectToSignIn, SignOutButton } from "@clerk/nextjs"; // Clerk hooks
+import { motion } from "framer-motion"; // For animations
+import ContactInfo from "@/components/admin/contacts"; // Contact Info component
+import Stats from "@/components/admin/stats";
+import FeedbackSection from "@/components/admin/feedback";
 
 const AdminDashboard = () => {
   const { isSignedIn, isLoaded } = useAuth(); // Use Clerk's useAuth hook
-  const [contacts, setContacts] = useState<Contact[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [stats, setStats] = useState<Stats | null>(null); // To hold statistics data
+  const [activeTab, setActiveTab] = useState("contacts"); // Manage active tab
+  const [contacts, setContacts] = useState<any[]>([]); // Contacts data
+  const [stats, setStats] = useState<any | null>(null); // Stats state for the pie chart
 
-  // Function to fetch contacts from the API
+  // Function to change active tab
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+  };
+
+  // Function to fetch contacts and calculate stats
   const fetchContacts = async () => {
     try {
-      const response = await fetch('/api/admin/contacts');
+      const response = await fetch("/api/admin/contacts"); // Fetch contacts
       const data = await response.json();
       if (response.ok) {
-        setContacts(data);
-        analyzeData(data); // Analyze the data when contacts are fetched
+        setContacts(data); // Set the contacts data
+        calculateStats(data); // Calculate the stats after fetching data
       } else {
-        console.error('Failed to fetch contacts:', data.error);
+        console.error("Failed to fetch contacts:", data.error);
       }
     } catch (error) {
-      console.error('Error fetching contacts:', error);
-    } finally {
-      setLoading(false);
+      console.error("Error fetching contacts:", error);
     }
   };
 
-   // Function to delete a contact
-   const handleDelete = async (id: string) => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this contact?');
-    if (!confirmDelete) return;
-
-    const response = await fetch(`/api/admin/delete?id=${id}`, { method: 'DELETE' });
-    const result = await response.json();
-
-    if (response.ok) {
-      alert('Contact deleted successfully');
-      fetchContacts(); // Reload the data after deleting the contact
-    } else {
-      alert(result.error || 'Error deleting contact');
-    }
-  };
-
-  
-  
-
-  // Function to analyze and create statistics from the data
-  const analyzeData = (data: Contact[]) => {
+  // Function to calculate stats from the contacts data
+  const calculateStats = (data: any[]) => {
     const countryStats: Record<string, number> = {};
     const jobTitleStats: Record<string, number> = {};
 
     data.forEach((contact) => {
       countryStats[contact.country] = (countryStats[contact.country] || 0) + 1;
-      jobTitleStats[contact.jobTitle] = (jobTitleStats[contact.jobTitle] || 0) + 1;
+      jobTitleStats[contact.jobTitle] =
+        (jobTitleStats[contact.jobTitle] || 0) + 1;
     });
 
-    // Pie chart data for country stats
     const countryData = {
       labels: Object.keys(countryStats),
       datasets: [
         {
           data: Object.values(countryStats),
-          backgroundColor: ['#A3A9FC', '#88D0F7', '#F4A261', '#2EC4B6'],
+          backgroundColor: ["#A3A9FC", "#88D0F7", "#F4A261", "#2EC4B6"],
         },
       ],
     };
@@ -97,107 +62,75 @@ const AdminDashboard = () => {
     });
   };
 
-  // Fetch the contacts when the component mounts
+  // Fetch contacts when the component loads or when activeTab is changed to "stats"
   useEffect(() => {
-    fetchContacts();
-  }, []);
+    if (isSignedIn && activeTab === "stats") {
+      fetchContacts(); // Fetch contacts only when the "Stats" tab is active
+    }
+  }, [isSignedIn, activeTab]);
 
-  // If Clerk is still loading, show a loading message
   if (!isLoaded) return <div>Loading...</div>;
 
-  // If the user is not authenticated, redirect to sign-in page
+  // Redirect to sign-in if the user is not signed in
   if (!isSignedIn) return <RedirectToSignIn />;
 
-  // If data is still loading, show a loading message
-  if (loading) return <div>Loading contacts...</div>;
-
-  // Extract username from email (before the "@"), only if user is available
-  const username =  'Jharna Kunwar';
-
   return (
-    
     <motion.div
-      className="max-w-7xl mx-auto py-6"
+      className="flex"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <h1 className="text-3xl font-bold mb-4 text-center">Admin Dashboard</h1>
-
-      {/* Display Welcome Message with User's Username */}
-      <div className="text-center mb-8">
-        <h2 className="text-xl">Welcome, {username}!</h2>
+      {/* Sidebar */}
+      <div className="w-64 bg-purple-900 text-white min-h-screen p-6">
+        <h2 className="text-2xl font-bold mb-8">Admin Dashboard</h2>
+        <div>
+          <ul className="space-y-4">
+            <li
+              onClick={() => handleTabChange("contacts")}
+              className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
+            >
+              Contact Information
+            </li>
+            <li
+              onClick={() => handleTabChange("stats")}
+              className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
+            >
+              Stats
+            </li>
+            <li
+              onClick={() => handleTabChange("feedback")}
+              className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
+            >
+              Feedback
+            </li>
+          </ul>
+        </div>
       </div>
 
-      {/* Logout Button */}
-      <div className="mb-4 flex justify-center">
-        <SignOutButton className="px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700">
-          Sign Out
-        </SignOutButton>
-      </div>
+      {/* Main Content Area */}
+      <div className="flex-1 p-8">
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl font-bold mb-4">Welcome Jharna Kunwar</h1>
 
-
-      {/* Contacts Table */}
-      <div className="overflow-x-auto mt-20 shadow-lg rounded-lg bg-white">
-        <table className="min-w-full text-sm text-left text-gray-500">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-100">
-            <tr>
-              <th scope="col" className="px-6 py-3">Name</th>
-              <th scope="col" className="px-6 py-3">Email</th>
-              <th scope="col" className="px-6 py-3">Phone</th>
-              <th scope="col" className="px-6 py-3">Company</th>
-              <th scope="col" className="px-6 py-3">Country</th>
-              <th scope="col" className="px-6 py-3">Job Title</th>
-              <th scope="col" className="px-6 py-3">Job Details</th>
-              <th scope="col" className="px-6 py-3">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {contacts.map((contact) => (
-              <motion.tr
-                key={contact._id}
-                className="border-b bg-white hover:bg-gray-50 transition duration-300"
-                whileHover={{ scale: 1.02 }}
-              >
-                <td className="px-6 py-4">{contact.name}</td>
-                <td className="px-6 py-4">{contact.email}</td>
-                <td className="px-6 py-4">{contact.phone}</td>
-                <td className="px-6 py-4">{contact.company}</td>
-                <td className="px-6 py-4">{contact.country}</td>
-                <td className="px-6 py-4">{contact.jobTitle}</td>
-                <td className="px-6 py-4">{contact.jobDetails}</td>
-                <td className="px-6 py-4">
-                  <button
-                    className="text-red-600 hover:text-red-900"
-                    onClick={() => handleDelete(contact._id)}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </td>
-              </motion.tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {/* Stats Section */}
-      <div className="grid mt-20 grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        {/* Total Contacts */}
-        <div className="bg-purple-700 text-white p-6 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-bold">Total Contacts</h3>
-          <p className="text-xl mt-4">{stats ? stats.totalContacts : 0}</p>
+          {/* Sign-out Button */}
+          <div className="mb-4 flex justify-center">
+            <div className="px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700">
+              <SignOutButton>Sign Out</SignOutButton>
+            </div>
+          </div>
         </div>
 
-        {/* Country Stats Pie Chart */}
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-bold">Contacts by Country</h3>
-          {stats?.countryStats ? (
-            <Pie data={stats.countryStats} />
-          ) : (
-            <p className="text-center mt-4">No data available</p>
-          )}
-        </div>
+        {activeTab === "contacts" && <ContactInfo />} {/* Show Contact Info tab content */}
+        
+        {activeTab === "stats" && stats && <Stats stats={stats} />} {/* Show Stats component */}
+
+        {activeTab === "feedback" &&  (
+          <div>
+            <h2 className="text-3xl mb-6">Feedback Section</h2>
+            <FeedbackSection/>
+          </div>
+        )}
       </div>
     </motion.div>
   );
