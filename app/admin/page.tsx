@@ -96,13 +96,13 @@ const AdminDashboard = () => {
               onClick={() => handleTabChange("stats")}
               className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
             >
-              Stats
+              Statistics
             </li>
             <li
               onClick={() => handleTabChange("feedback")}
               className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
             >
-              Feedback
+              Feedback Information
             </li>
           </ul>
         </div>

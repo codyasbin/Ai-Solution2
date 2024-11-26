@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion"; // For animations
 
 // Type definition for the Contact data
@@ -61,9 +61,9 @@ const ContactInfo = () => {
   };
 
   // Fetch contacts when the component mounts
-  useState(() => {
+  useEffect(() => {
     fetchContacts();
-  }, []);
+  }, []); // Empty dependency array ensures this runs only once, when the component mounts
 
   return (
     <motion.div
