@@ -68,22 +68,22 @@ export default function ContactPage() {
     <div>
       {/* Hero Section */}
       <motion.section
-      className="relative h-screen bg-gradient-to-b from-purple-900 to-purple-800 text-white flex items-center justify-center text-center"
+      className="relative h-screen bg-gradient-to-b from-neutral-900 to-neutral-800 text-white flex items-center justify-center text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <div>
         <motion.h1
-          className="text-5xl md:text-6xl font-bold leading-tight"
+          className="text-5xl md:text-6xl font-bold  leading-tight"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          Get in<span className="text-purple-300"> Touch</span>
+          Get in<span className="text-neutral-300"> Touch</span>
         </motion.h1>
         <motion.p
-          className="mt-4 text-lg md:text-xl text-gray-300"
+          className="mt-4 text-lg md:text-xl text-neutral-300"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
@@ -95,7 +95,7 @@ export default function ContactPage() {
 
       {/* Contact Form Section */}
       <motion.section
-        className="py-16 bg-white text-gray-800"
+        className="py-16 bg-white text-neutral-800"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="block w-full px-4 py-3 bg-gray-100 text-gray-700 placeholder-gray-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="block w-full px-4 py-3 bg-neutral-100 text-neutral-700 placeholder-neutral-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-600"
                 placeholder="Your Name"
               />
             </div>
@@ -127,7 +127,7 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="block w-full px-4 py-3 bg-gray-100 text-gray-700 placeholder-gray-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="block w-full px-4 py-3 bg-neutral-100 text-neutral-700 placeholder-neutral-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-600"
                 placeholder="Your Email"
               />
             </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="block w-full px-4 py-3 bg-gray-100 text-gray-700 placeholder-gray-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="block w-full px-4 py-3 bg-neutral-100 text-neutral-700 placeholder-neutral-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-600"
                 placeholder="Your Phone (optional)"
               />
             </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="block w-full px-4 py-3 bg-gray-100 text-gray-700 placeholder-gray-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="block w-full px-4 py-3 bg-neutral-100 text-neutral-700 placeholder-neutral-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-600"
                 placeholder="Your Company (optional)"
               />
             </div>
@@ -163,7 +163,7 @@ export default function ContactPage() {
                 value={formData.country}
                 onChange={handleChange}
                 required
-                className="block w-full px-4 py-3 bg-gray-100 text-gray-700 placeholder-gray-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="block w-full px-4 py-3 bg-neutral-100 text-neutral-700 placeholder-neutral-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-600"
               >
                 <option value="">Select Your Country</option>
                 <option value="Nepal">Nepal</option>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                 name="jobTitle"
                 value={formData.jobTitle}
                 onChange={handleChange}
-                className="block w-full px-4 py-3 bg-gray-100 text-gray-700 placeholder-gray-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="block w-full px-4 py-3 bg-neutral-100 text-neutral-700 placeholder-neutral-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-600"
                 placeholder="Your Job Title (optional)"
               />
             </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                 value={formData.jobDetails}
                 onChange={handleChange}
                 required
-                className="block w-full px-4 py-3 bg-gray-100 text-gray-700 placeholder-gray-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="block w-full px-4 py-3 bg-neutral-100 text-neutral-700 placeholder-neutral-400 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-600"
                 rows={6}
                 placeholder="Please describe your job requirements"
               />
@@ -204,7 +204,7 @@ export default function ContactPage() {
             <div className="relative">
               <button
                 type="submit"
-                className="w-full py-3 bg-purple-600 text-white font-semibold rounded-md shadow-md hover:bg-purple-700 transition-all"
+                className="w-full py-3 bg-neutral-600 text-white font-semibold rounded-md shadow-md hover:bg-neutral-700 transition-all"
               >
                 {formStatus === "Submitting..." ? "Submitting..." : "Submit"}
               </button>

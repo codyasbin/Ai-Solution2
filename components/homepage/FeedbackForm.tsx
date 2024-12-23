@@ -70,7 +70,7 @@ export default function FeedbackForm() {
       className="bg-white p-8 rounded-xl shadow-lg max-w-lg mx-auto mt-8 space-y-6"
       onSubmit={handleSubmit}
     >
-      <h3 className="text-3xl font-semibold text-center text-gray-800">
+      <h3 className="text-3xl font-semibold text-center text-neutral-800">
         Share Your Thoughts with Us
       </h3>
 
@@ -83,7 +83,7 @@ export default function FeedbackForm() {
             placeholder="Your Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-4 border-2 border-gray-300 rounded-md shadow-md focus:ring-2 focus:ring-purple-500"
+            className="w-full p-4 border-2 border-neutral-300 rounded-md shadow-md focus:ring-2 focus:ring-neutral-500"
             required
           />
         </div>
@@ -96,7 +96,7 @@ export default function FeedbackForm() {
             placeholder="Your Role"
             value={formData.role}
             onChange={handleChange}
-            className="w-full p-4 border-2 border-gray-300 rounded-md shadow-md focus:ring-2 focus:ring-purple-500"
+            className="w-full p-4 border-2 border-neutral-300 rounded-md shadow-md focus:ring-2 focus:ring-neutral-500"
             required
           />
         </div>
@@ -109,7 +109,7 @@ export default function FeedbackForm() {
             placeholder="Add profile image url"
             value={formData.image}
             onChange={handleChange}
-            className="w-full p-4 border-2 border-gray-300 rounded-md shadow-md focus:ring-2 focus:ring-purple-500"
+            className="w-full p-4 border-2 border-neutral-300 rounded-md shadow-md focus:ring-2 focus:ring-neutral-500"
           />
         </div>
 
@@ -121,14 +121,14 @@ export default function FeedbackForm() {
             value={formData.feedback}
             onChange={handleChange}
             rows={4}
-            className="w-full p-4 border-2 border-gray-300 rounded-md shadow-md focus:ring-2 focus:ring-purple-500"
+            className="w-full p-4 border-2 border-neutral-300 rounded-md shadow-md focus:ring-2 focus:ring-neutral-500"
             required
           ></textarea>
         </div>
 
         {/* Rating */}
         <div>
-          <label htmlFor="rating" className="text-gray-600 font-semibold">
+          <label htmlFor="rating" className="text-neutral-600 font-semibold">
             Rating (1-5)
           </label>
           <input
@@ -138,7 +138,7 @@ export default function FeedbackForm() {
             max={5}
             value={formData.rating}
             onChange={handleChange}
-            className="w-full p-4 border-2 border-gray-300 rounded-md shadow-md focus:ring-2 focus:ring-purple-500"
+            className="w-full p-4 border-2 border-neutral-300 rounded-md shadow-md focus:ring-2 focus:ring-neutral-500"
             required
           />
         </div>
@@ -153,7 +153,7 @@ export default function FeedbackForm() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-700 transition duration-300"
+            className="bg-neutral-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-neutral-700 transition duration-300"
             disabled={isLoading}
           >
             {isLoading ? "Submitting..." : "Submit Your Feedback"}

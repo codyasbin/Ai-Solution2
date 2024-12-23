@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Vision() {
   return (
     <motion.section
-      className="py-16 bg-gradient-to-b from-purple-950 to-purple-800 text-white"
+      className="py-16 bg-gradient-to-b from-neutral-950 to-neutral-800 text-white"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -24,14 +24,14 @@ export default function Vision() {
 
           {/* Vision Section */}
           <motion.div
-            className="relative flex flex-col justify-center items-center p-10 text-center bg-purple-800 rounded-lg shadow-xl"
+            className="relative flex flex-col justify-center items-center p-10 text-center bg-neutral-800 rounded-lg shadow-xl"
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <motion.h3
-              className="text-3xl font-semibold text-purple-300"
+              className="text-3xl font-semibold text-neutral-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
@@ -39,7 +39,7 @@ export default function Vision() {
               Our Vision
             </motion.h3>
             <motion.p
-              className="mt-6 text-lg text-gray-300"
+              className="mt-6 text-lg text-neutral-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -51,14 +51,14 @@ export default function Vision() {
 
           {/* Mission Section */}
           <motion.div
-            className="relative flex flex-col justify-center items-center p-10 text-center bg-purple-900 rounded-lg shadow-xl"
+            className="relative flex flex-col justify-center items-center p-10 text-center bg-neutral-900 rounded-lg shadow-xl"
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <motion.h3
-              className="text-3xl font-semibold text-purple-300"
+              className="text-3xl font-semibold text-neutral-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
@@ -66,7 +66,7 @@ export default function Vision() {
               Our Mission
             </motion.h3>
             <motion.p
-              className="mt-6 text-lg text-gray-300"
+              className="mt-6 text-lg text-neutral-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -80,12 +80,12 @@ export default function Vision() {
 
         {/* Core Values Section */}
         <motion.div
-          className="mt-16 bg-purple-800 p-12 rounded-lg shadow-xl text-center"
+          className="mt-16 bg-neutral-800 p-12 rounded-lg shadow-xl text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          <h3 className="text-3xl font-bold text-purple-300">Our Core Values</h3>
+          <h3 className="text-3xl font-bold text-neutral-300">Our Core Values</h3>
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
               className="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300"
@@ -98,8 +98,8 @@ export default function Vision() {
                 alt="Innovation"
                 className="w-16 h-16 rounded-full mx-auto mb-4"
               />
-              <h4 className="text-xl font-semibold text-purple-600">Innovation</h4>
-              <p className="text-gray-700 mt-4">
+              <h4 className="text-xl font-semibold text-neutral-600">Innovation</h4>
+              <p className="text-neutral-700 mt-4">
                 We thrive on constant innovation, always pushing the boundaries of what AI can achieve.
               </p>
             </motion.div>
@@ -115,8 +115,8 @@ export default function Vision() {
                 alt="Integrity"
                 className="w-16 h-16 rounded-full mx-auto mb-4"
               />
-              <h4 className="text-xl font-semibold text-purple-600">Integrity</h4>
-              <p className="text-gray-700 mt-4">
+              <h4 className="text-xl font-semibold text-neutral-600">Integrity</h4>
+              <p className="text-neutral-700 mt-4">
                 Our work is built on a foundation of transparency, honesty, and ethical practices.
               </p>
             </motion.div>
@@ -132,8 +132,8 @@ export default function Vision() {
                 alt="Excellence"
                 className="w-16 h-16 rounded-full mx-auto mb-4"
               />
-              <h4 className="text-xl font-semibold text-purple-600">Excellence</h4>
-              <p className="text-gray-700 mt-4">
+              <h4 className="text-xl font-semibold text-neutral-600">Excellence</h4>
+              <p className="text-neutral-700 mt-4">
                 We strive for excellence in everything we do, setting high standards for quality and performance.
               </p>
             </motion.div>

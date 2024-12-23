@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <motion.section
-      className="relative h-screen bg-gradient-to-b from-purple-900 to-purple-800 text-white flex items-center justify-center text-center"
+      className="relative h-screen bg-gradient-to-b from-neutral-900 to-neutral-800 text-white flex items-center justify-center text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -16,10 +16,10 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          About <span className="text-purple-300">AI-Solution</span>
+          About <span className="text-neutral-300">AI-Solution</span>
         </motion.h1>
         <motion.p
-          className="mt-4 text-lg md:text-xl text-gray-300"
+          className="mt-4 text-lg md:text-xl text-neutral-300"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}

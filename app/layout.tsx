@@ -24,7 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en">
         <body>
           {/* Header Section */}
-          <header className="fixed top-0 w-full bg-gradient-to-r from-purple-700 to-purple-900 text-white shadow-md z-50">
+          <header className="fixed top-0 w-full bg-gradient-to-r from-neutral-700 to-neutral-900 text-white shadow-md z-50">
             <nav className="container mx-auto flex justify-between items-center py-4 px-6">
               {/* Logo */}
               <div className="text-2xl font-bold">
@@ -73,12 +73,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <main className="mt-[70px] min-h-screen">{children}</main>
 
           {/* Footer Section */}
-          <footer className="bg-gray-900 text-gray-200 py-6">
+          <footer className="bg-neutral-900 text-neutral-200 py-6">
             <div className="container mx-auto flex flex-col items-center space-y-4">
               {/* Brand and Tagline */}
               <div className="text-center">
                 <h2 className="text-2xl font-bold text-white">AI-Solution</h2>
-                <p className="text-sm text-gray-400 mt-1">
+                <p className="text-sm text-neutral-400 mt-1">
                   Transforming Ideas into AI Innovations
                 </p>
               </div>
@@ -114,7 +114,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   aria-label="Facebook"
                 >
                   <svg
-                    className="w-6 h-6 text-gray-400 hover:text-white transition-colors"
+                    className="w-6 h-6 text-neutral-400 hover:text-white transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -128,7 +128,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   aria-label="Twitter"
                 >
                   <svg
-                    className="w-6 h-6 text-gray-400 hover:text-white transition-colors"
+                    className="w-6 h-6 text-neutral-400 hover:text-white transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -142,7 +142,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   aria-label="LinkedIn"
                 >
                   <svg
-                    className="w-6 h-6 text-gray-400 hover:text-white transition-colors"
+                    className="w-6 h-6 text-neutral-400 hover:text-white transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -152,7 +152,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
 
               {/* Copyright */}
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-neutral-400">
                 © {new Date().getFullYear()} AI-Solution. All rights reserved.
               </p>
             </div>

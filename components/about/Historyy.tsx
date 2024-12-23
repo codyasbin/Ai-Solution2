@@ -13,7 +13,7 @@ export default function HistorySection() {
 
   return (
     <motion.section
-      className="py-16 bg-gradient-to-b from-purple-950 to-purple-900 text-white"
+      className="py-16 bg-gradient-to-b from-neutral-950 to-neutral-900 text-white"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -41,11 +41,11 @@ export default function HistorySection() {
               whileHover={{ scale: 1.05 }}
             >
               {/* Year */}
-              <div className="w-16 h-16 rounded-full bg-purple-700 flex items-center justify-center text-xl font-bold">
+              <div className="w-16 h-16 rounded-full bg-neutral-700 flex items-center justify-center text-xl font-bold">
                 {item.year}
               </div>
               {/* Detail */}
-              <p className="bg-purple-800 p-4 rounded-lg shadow-md max-w-md">{item.detail}</p>
+              <p className="bg-neutral-800 p-4 rounded-lg shadow-md max-w-md">{item.detail}</p>
             </motion.div>
           ))}
         </div>

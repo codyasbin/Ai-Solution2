@@ -29,8 +29,8 @@ export async function POST(request: Request): Promise<NextResponse> {
     // Connect to MongoDB
     const client = await clientPromise;
 
-    // Explicitly select the "ai-solution" database
-    const db = client.db("ai-solution");
+    // Explicitly select the "a1-solution2" database
+    const db = client.db("a1-solution2");
 
     // Insert the data into the 'contacts' collection
     const result = await db.collection("contacts").insertOne(body);

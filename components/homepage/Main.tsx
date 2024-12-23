@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Main() {
   return (
-    <section id="main" className="relative h-screen bg-purple-800">
+    <section id="main" className="relative h-screen bg-neutral-800">
       {/* Overlay (Subtle darker shade for better contrast) */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
@@ -23,7 +23,7 @@ export default function Main() {
 
         {/* Tagline */}
         <motion.p
-          className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
+          className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }} // Animation triggered when in view
           transition={{ duration: 1, delay: 0.3 }}
@@ -46,8 +46,8 @@ export default function Main() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <h2 className="text-2xl font-semibold text-purple-600">AI Automation</h2>
-            <p className="text-gray-700 mt-4">
+            <h2 className="text-2xl font-semibold text-neutral-600">AI Automation</h2>
+            <p className="text-neutral-700 mt-4">
               Automate mundane tasks with AI-powered tools that enhance operational efficiency, reduce human error, and save time.
             </p>
           </motion.div>
@@ -58,8 +58,8 @@ export default function Main() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <h2 className="text-2xl font-semibold text-purple-600">Data-Driven Insights</h2>
-            <p className="text-gray-700 mt-4">
+            <h2 className="text-2xl font-semibold text-neutral-600">Data-Driven Insights</h2>
+            <p className="text-neutral-700 mt-4">
               Make smarter business decisions with advanced data analytics, powered by AI-driven insights tailored to your needs.
             </p>
           </motion.div>
@@ -70,8 +70,8 @@ export default function Main() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <h2 className="text-2xl font-semibold text-purple-600">Custom AI Solutions</h2>
-            <p className="text-gray-700 mt-4">
+            <h2 className="text-2xl font-semibold text-neutral-600">Custom AI Solutions</h2>
+            <p className="text-neutral-700 mt-4">
               Our bespoke AI solutions are tailored to fit your business model, ensuring innovation and growth in every step.
             </p>
           </motion.div>
@@ -81,7 +81,7 @@ export default function Main() {
         <Link href='/services' >
         
               <motion.button
-          className="mt-8 px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold text-lg rounded-full shadow-xl transition-all duration-200"
+          className="mt-8 px-8 py-4 bg-neutral-600 hover:bg-neutral-700 text-white font-semibold text-lg rounded-full shadow-xl transition-all duration-200"
           whileHover={{
             scale: 1.1,
             boxShadow: '0px 0px 25px rgba(128, 90, 213, 1)', // Glowing effect on hover

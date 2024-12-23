@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
   if (!globalThis._mongoClientPromise) {
     client = new MongoClient(uri, options);
     globalThis._mongoClientPromise = client.connect().then((client) => {
-      const db = client.db('ai-solution'); // Specify the database here
+      const db = client.db('a1-solution2'); // Specify the database here
       console.log(`Connected to MongoDB: ${db.databaseName}`);
       return client;
     });
@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   client = new MongoClient(uri, options);
   clientPromise = client.connect().then((client) => {
-    const db = client.db('ai-solution'); // Specify the database here
+    const db = client.db('a1-solution2'); // Specify the database here
     console.log(`Connected to MongoDB: ${db.databaseName}`);
     return client;
   });

@@ -82,25 +82,25 @@ const AdminDashboard = () => {
       transition={{ duration: 0.8 }}
     >
       {/* Sidebar */}
-      <div className="w-64 bg-purple-900 text-white min-h-screen p-6">
+      <div className="w-64 bg-neutral-900 text-white min-h-screen p-6">
         <h2 className="text-2xl font-bold mb-8">Admin Dashboard</h2>
         <div>
           <ul className="space-y-4">
             <li
               onClick={() => handleTabChange("contacts")}
-              className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
+              className="cursor-pointer hover:bg-neutral-700 p-2 rounded-md"
             >
               Contact Information
             </li>
             <li
               onClick={() => handleTabChange("stats")}
-              className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
+              className="cursor-pointer hover:bg-neutral-700 p-2 rounded-md"
             >
               Statistics
             </li>
             <li
               onClick={() => handleTabChange("feedback")}
-              className="cursor-pointer hover:bg-purple-700 p-2 rounded-md"
+              className="cursor-pointer hover:bg-neutral-700 p-2 rounded-md"
             >
               Feedback Information
             </li>
@@ -111,7 +111,7 @@ const AdminDashboard = () => {
       {/* Main Content Area */}
       <div className="flex-1 p-8">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold mb-4">Welcome Jharna Kunwar</h1>
+          <h1 className="text-3xl font-bold mb-4">Welcome Rajan Capri</h1>
 
           {/* Sign-out Button */}
           <div className="mb-4 flex justify-center">

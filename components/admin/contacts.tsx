@@ -72,8 +72,8 @@ const ContactInfo = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <table className="min-w-full text-sm text-left text-gray-500">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+      <table className="min-w-full text-sm text-left text-neutral-500">
+        <thead className="text-xs text-neutral-700 uppercase bg-neutral-100">
           <tr>
             <th scope="col" className="px-6 py-3">
               Name
@@ -105,7 +105,7 @@ const ContactInfo = () => {
           {contacts.map((contact) => (
             <motion.tr
               key={contact._id}
-              className="border-b bg-white hover:bg-gray-50 transition duration-300"
+              className="border-b bg-white hover:bg-neutral-50 transition duration-300"
               whileHover={{ scale: 1.02 }}
             >
               <td className="px-6 py-4">{contact.name}</td>

@@ -4,7 +4,7 @@ import clientPromise from '@/lib/mongodb';
 export async function GET() {
   try {
     const client = await clientPromise;
-    const db = client.db('ai-solution');
+    const db = client.db('a1-solution2');
     const contacts = await db.collection('contacts').find({}).toArray();
 
     return NextResponse.json(contacts, { status: 200 });

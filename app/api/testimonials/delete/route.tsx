@@ -13,7 +13,7 @@ export async function DELETE(request: Request) {
 
     // Connect to MongoDB
     const client = await clientPromise;
-    const db = client.db("ai-solution"); // Database name
+    const db = client.db("a1-solution2"); // Database name
     const result = await db.collection("testimonials").deleteOne({ _id: new ObjectId(id) });
 
     if (result.deletedCount === 1) {

@@ -9,7 +9,7 @@ export async function DELETE(request: Request) {
     if (!id) return NextResponse.json({ error: 'ID is required' }, { status: 400 });
 
     const client = await clientPromise;
-    const db = client.db('ai-solution');
+    const db = client.db('a1-solution2');
     const result = await db.collection('contacts').deleteOne({ _id: new ObjectId(id) });
 
     if (result.deletedCount === 0) {

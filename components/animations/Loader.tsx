@@ -26,7 +26,7 @@ const Loader: React.FC = () => {
         style={{
           width: "80px", // increased size for better visibility
           height: "80px", // increased size for better visibility
-          border: "6px solid #d1d5db", // light gray border
+          border: "6px solid #d1d5db", // light neutral border
           borderTop: "6px solid #4b6cb7", // animated color (blue gradient)
           borderRadius: "50%",
           boxShadow: "0 0 15px rgba(0, 0, 0, 0.3)", // subtle shadow for depth

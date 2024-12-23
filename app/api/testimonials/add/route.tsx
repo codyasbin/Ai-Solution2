@@ -13,7 +13,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   try {
     const body: NewTestimonial = await request.json();
     const client = await clientPromise;
-    const db = client.db("ai-solution");
+    const db = client.db("a1-solution2");
 
     const result = await db.collection("testimonials").insertOne(body);
 

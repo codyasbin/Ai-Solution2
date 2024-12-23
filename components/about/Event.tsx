@@ -29,7 +29,7 @@ const events = [
 export default function EventsSection() {
   return (
     <motion.section
-      className="py-16 bg-purple-50 text-white"
+      className="py-16 bg-neutral-50 text-white"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -39,7 +39,7 @@ export default function EventsSection() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl text-purple-950 font-bold text-center mb-8">Upcoming Events</h2>
+        <h2 className="text-4xl text-neutral-950 font-bold text-center mb-8">Upcoming Events</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <motion.div
@@ -57,13 +57,13 @@ export default function EventsSection() {
               {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6 opacity-0 hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-semibold">{event.title}</h3>
-                <p className="text-sm text-gray-300 mt-2">
+                <p className="text-sm text-neutral-300 mt-2">
                   {event.date} - {event.location}
                 </p>
-                <p className="mt-4 text-gray-400">{event.description}</p>
+                <p className="mt-4 text-neutral-400">{event.description}</p>
                 <Link href={"contact"}>
                 
-                <button className="mt-4 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-md">
+                <button className="mt-4 px-4 py-2 bg-neutral-600 hover:bg-neutral-700 text-white text-sm font-semibold rounded-md">
                   Register
                 </button>
                 </Link>

@@ -76,7 +76,7 @@ export default function FeedbackSection() {
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-xl font-semibold">{feedback.name}</h3>
-                <p className="text-gray-500">{feedback.role}</p>
+                <p className="text-neutral-500">{feedback.role}</p>
               </div>
               <button
                 onClick={() => handleDeleteFeedback(feedback._id)}

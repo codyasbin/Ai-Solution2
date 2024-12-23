@@ -63,56 +63,56 @@ export default function Form() {
       <form onSubmit={handleSubmit}>
         {/* Name Field */}
         <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+          <label htmlFor="name" className="block text-sm font-medium text-neutral-700">Name</label>
           <input
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
           />
         </div>
 
         {/* Email Field */}
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-neutral-700">Email</label>
           <input
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
           />
         </div>
 
         {/* Company Field */}
         <div className="mb-4">
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700">Company</label>
+          <label htmlFor="company" className="block text-sm font-medium text-neutral-700">Company</label>
           <input
             type="text"
             id="company"
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
           />
         </div>
 
         {/* Message Field */}
         <div className="mb-4">
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+          <label htmlFor="message" className="block text-sm font-medium text-neutral-700">Message</label>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
           ></textarea>
         </div>
@@ -127,7 +127,7 @@ export default function Form() {
         {/* Submit Button */}
         <button
           type="submit"
-          className={`w-full px-4 py-2 text-white font-semibold rounded-md ${formStatus.includes('Submitting') ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+          className={`w-full px-4 py-2 text-white font-semibold rounded-md ${formStatus.includes('Submitting') ? 'bg-neutral-400' : 'bg-indigo-600 hover:bg-indigo-700'}`}
           disabled={formStatus.includes('Submitting')}
         >
           {formStatus.includes('Submitting') ? 'Submitting...' : 'Submit'}

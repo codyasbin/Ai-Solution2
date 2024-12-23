@@ -59,7 +59,7 @@ export default function TestimonialSection() {
 
   return (
     <motion.section
-      className="relative h-screen bg-gradient-to-b from-purple-900 to-purple-950 text-white py-16"
+      className="relative h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 text-white py-16"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -67,7 +67,7 @@ export default function TestimonialSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Heading */}
         <h2 className="text-4xl font-bold text-center">What Our Clients Say</h2>
-        <p className="text-gray-300 text-center mt-4">
+        <p className="text-neutral-300 text-center mt-4">
           Trusted by businesses across industries to deliver excellence.
         </p>
 
@@ -82,12 +82,12 @@ export default function TestimonialSection() {
               <img
                 src={testimonials[(activeIndex + testimonials.length - 1) % testimonials.length].image}
                 alt={testimonials[(activeIndex + testimonials.length - 1) % testimonials.length].name}
-                className="w-16 h-16 rounded-full mx-auto border-4 border-purple-600"
+                className="w-16 h-16 rounded-full mx-auto border-4 border-neutral-600"
               />
-              <p className="mt-2 text-gray-800 font-semibold text-center">
+              <p className="mt-2 text-neutral-800 font-semibold text-center">
                 {testimonials[(activeIndex + testimonials.length - 1) % testimonials.length].name}
               </p>
-              <p className="text-sm text-gray-500 text-center">
+              <p className="text-sm text-neutral-500 text-center">
                 {testimonials[(activeIndex + testimonials.length - 1) % testimonials.length].role}
               </p>
             </motion.div>
@@ -105,9 +105,9 @@ export default function TestimonialSection() {
               <img
                 src={testimonials[activeIndex].image}
                 alt={testimonials[activeIndex].name}
-                className="w-20 h-20 rounded-full mx-auto border-4 border-purple-600"
+                className="w-20 h-20 rounded-full mx-auto border-4 border-neutral-600"
               />
-              <p className="mt-6 italic text-gray-700">
+              <p className="mt-6 italic text-neutral-700">
                 "{testimonials[activeIndex].feedback}"
               </p>
               <div className="mt-4 flex justify-center text-yellow-500">
@@ -121,7 +121,7 @@ export default function TestimonialSection() {
                 )}
               </div>
               <p className="mt-4 font-bold">{testimonials[activeIndex].name}</p>
-              <p className="text-sm text-gray-500">{testimonials[activeIndex].role}</p>
+              <p className="text-sm text-neutral-500">{testimonials[activeIndex].role}</p>
             </motion.div>
           )}
 
@@ -134,12 +134,12 @@ export default function TestimonialSection() {
               <img
                 src={testimonials[(activeIndex + 1) % testimonials.length].image}
                 alt={testimonials[(activeIndex + 1) % testimonials.length].name}
-                className="w-16 h-16 rounded-full mx-auto border-4 border-purple-600"
+                className="w-16 h-16 rounded-full mx-auto border-4 border-neutral-600"
               />
-              <p className="mt-2 text-gray-800 font-semibold text-center">
+              <p className="mt-2 text-neutral-800 font-semibold text-center">
                 {testimonials[(activeIndex + 1) % testimonials.length].name}
               </p>
-              <p className="text-sm text-gray-500 text-center">
+              <p className="text-sm text-neutral-500 text-center">
                 {testimonials[(activeIndex + 1) % testimonials.length].role}
               </p>
             </motion.div>
@@ -150,13 +150,13 @@ export default function TestimonialSection() {
         <div className="mt-12 flex justify-center space-x-4">
           <button
             onClick={prevTestimonial}
-            className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-full shadow-md"
+            className="px-4 py-2 bg-neutral-600 hover:bg-neutral-700 rounded-full shadow-md"
           >
             Prev
           </button>
           <button
             onClick={nextTestimonial}
-            className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-full shadow-md"
+            className="px-4 py-2 bg-neutral-600 hover:bg-neutral-700 rounded-full shadow-md"
           >
             Next
           </button>

@@ -15,7 +15,7 @@ interface Testimonial {
 export async function GET(): Promise<NextResponse> {
   try {
     const client = await clientPromise;
-    const db = client.db("ai-solution");
+    const db = client.db("a1-solution2");
 
     // Fetch the testimonials and map them to the Testimonial interface
     const testimonials = await db
