@@ -1,5 +1,6 @@
 import CaseStudy from "@/components/homepage/CaseStudy";
 import FeedbackForm from "@/components/homepage/FeedbackForm";
+import FloatingButton from "@/components/homepage/FloatingButton";
 import Hero from "@/components/homepage/Hero";
 import Main from "@/components/homepage/Main";
 import Testimonial from "@/components/homepage/Testimonial";
@@ -13,6 +14,7 @@ export default function page() {
      <CaseStudy/>
      <Testimonial/>
      <FeedbackForm/>
+     <FloatingButton/>
     </>
   );
 }
